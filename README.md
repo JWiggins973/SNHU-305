@@ -14,10 +14,18 @@ The part of the vulnerability assesment I found most challenging was that after 
 
 ### How did you increase layers of security? In the future, what would you use to assess vulnerabilities and decide which mitigation techniques to use?
 
-To increase the layers of security I implemented the SHA-256 hashing algorithm to ensure data integrity during data trasnfers while implementing exception handling to prevent exposure to sensitive information
+In addition to the SHA-256 hash, to increase the layers of security I generated a self sign cerificate using java keytool, this ensures the communication is secure and verifies the identity of the server to the client. In the future i plan to use automated scanning tools like the OWASP dependency check to quickly identitfy potential threats and manual code reviews to inspect code logic and validation.
 
 ### How did you make certain the code and software application were functional and secure? After refactoring the code, how did you check to see whether you introduced new vulnerabilities?
 
+I ensured the software was both functional and secure by integrating the SHA-256 hashing algorithm for data integrity and generating a self-signed certificate for secure HTTPS communication. After refactoring the code, I tested the application to verify that both the hashing and secure communication mechanisms were functioning correctly. I also used tools like dependency-check and static analysis to scan for vulnerabilities. To confirm that no new vulnerabilities were introduced, I ran an additional dependency check post-refactoring.
+
 ### What resources, tools, or coding practices did you use that might be helpful in future assignments or tasks?
 
+The most useful resource when doing this project was the OWASP documentation on algorithms. It provided valuable information to help decide which algorithm to use in solving Artemis Financial’s security issue. I also plan to use the Dependency Check tool, as having an automated check can help pinpoint problems quickly, ensuring the software is secure and compliant with industry standards. In addition to that, I must also remember not to solely rely on the Dependency Check, because manual code reviews are just as valuable. They allow me to identify logical errors that could result in vulnerabilities.
+
 ### Employers sometimes ask for examples of work that you have successfully completed to show your skills, knowledge, and experience. What might you show future employers from this assignment?
+
+I would showcase my ability to implement secure communication using HTTPS with a self-signed certificate, ensuring secure client-server interactions. I also integrated SHA-256 hashing for data integrity and file verification, demonstrating my knowledge of cryptography. Additionally, I conducted thorough vulnerability assessments, refactored the code, and ensured no new security risks were introduced, highlighting my expertise in identifying and fixing vulnerabilities.
+
+
